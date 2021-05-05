@@ -3,9 +3,11 @@ import db from './database/initializeDB.js';
 import apiRoutes from './routes/apiRoutes.js';
 
 const app = express();
+const staticFolder = "public";
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
